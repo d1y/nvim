@@ -86,18 +86,20 @@ M.alpha = {
   },
 };
 
-M.mason = {
-  ensure_installed = {
-    -- lua stuff
-    "lua-language-server",
-    "stylua",
-
-    -- web dev stuff
-    "css-lsp",
-    "html-lsp",
-    "typescript-language-server",
-    "deno",
+M.telescope = {
+  defaults = {
+    prompt_prefix = " 🥳  ",
+    selection_caret = " 👉 ",
+    entry_prefix = "  ",
+    layout_config = {
+      horizontal = {
+        prompt_position = "bottom",
+      },
+      width = 0.72,
+      height = 0.80,
+    }
   },
+  -- extensions_list = {  },
 }
 
 return M

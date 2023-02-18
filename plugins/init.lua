@@ -26,6 +26,9 @@ local plugins = {
        enabled = false,
      },
   },
+  ["nvim-telescope/telescope.nvim"] = {
+    override_options = overrides.telescope,
+  },
   -- 语法增强(高亮括号颜色)
   ['mrjones2014/nvim-ts-rainbow'] = {},
   ["nvim-treesitter/nvim-treesitter"] = {
