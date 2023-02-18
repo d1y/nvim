@@ -99,11 +99,9 @@ M.diy = {
       "<cmd> CodeActionMenu <CR>",
       "show code action menu(lsp extends)",
     },
-    -- 放大窗口
-    ["<leader>i"] = {
-      "<cmd> TZFocus <CR>",
-      "toggle current buffer(window) maximize"
-    },
+    ["<leader>ta"] = { "<cmd> TZAtaraxis <CR>", "truzen ataraxis" },
+    ["<leader>tm"] = { "<cmd> TZMinimalist <CR>", "truzen minimal" },
+    ["<leader>tf"] = { "<cmd> TZFocus <CR>", "truzen focus" },
     ["<leader>wl"] = {
       "<C-w>v <CR>",
       "split window to right",
