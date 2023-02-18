@@ -18,13 +18,7 @@ local plugins = {
     end,
   },
   ["NvChad/ui"] = {
-    statusline = {
-       separator_style = "round",
-       overriden_modules = nil,
-    },
-     tabufline = {
-       enabled = false,
-     },
+    override_options = overrides.ui,
   },
   ["nvim-telescope/telescope.nvim"] = {
     override_options = overrides.telescope,
@@ -178,6 +172,21 @@ local plugins = {
       require("true-zen").setup { }
     end
   },
+  ["akinsho/bufferline.nvim"] = {
+    config = function ()
+      require("bufferline").setup{
+        options = {
+          diagnostics = "nvim_lsp",
+          offsets = {{
+            filetype = 'neo-tree',
+            text = "File Explorer",
+            highlight = "Directory",
+            text_align = "left"
+          }}
+        }
+      }
+    end
+  }
 }
 
 

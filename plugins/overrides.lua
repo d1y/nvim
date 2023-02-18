@@ -39,6 +39,9 @@ M.treesitter = {
     "c",
     "vue",
   },
+  highlight = {
+    disable = { "help" },
+  },
   rainbow = {
     enable = true,
     extended_mode = true,
@@ -98,6 +101,15 @@ M.telescope = {
       width = 0.72,
       height = 0.80,
     }
+  },
+}
+
+M.ui = {
+  statusline = {
+   separator_style = "round",
+  },
+  tabufline = {
+   enabled = false,
   },
 }
 

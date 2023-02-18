@@ -52,15 +52,11 @@ M.diy = {
       "toggle floating term",
     },
     ["<leader>G"] = {
-      function()
-        require("nvchad_ui.tabufline").tabuflinePrev()
-      end,
+      ":BufferLineCyclePrev<CR>",
       "goto prev buffer",
     },
     ["<leader>H"] = {
-      function()
-        require("nvchad_ui.tabufline").tabuflineNext()
-      end,
+      ":BufferLineCycleNext<CR>",
       "goto next buffer",
     },
     ["<leader>q"] = {
