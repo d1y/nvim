@@ -30,6 +30,10 @@ M.diy = {
     },
   },
   n = {
+    ["<leader>F"] = {
+      "<cmd> Telescope git_files <CR>",
+      "show git files(telescope)",
+    },
     ["<leader>n"] = {
       "<cmd> NeoTreeShowToggle <CR>",
       "tree toggle"
