@@ -1,3 +1,5 @@
+local _, mini_move = pcall(require, "mini.move")
+
 local M = {}
 
 -- add this table only when you want to disable default keys
@@ -117,6 +119,32 @@ M.diy = {
     ["<leader>wo"] = {
       "<C-w>o",
       "only show current buffer",
+    },
+  },
+  x = {
+    ["<"] = {
+      function ()
+        mini_move.move_selection('left')
+      end,
+      "block move left",
+    },
+    [">"] = {
+      function ()
+        mini_move.move_selection('right')
+      end,
+      "block move right",
+    },
+    [","] = {
+      function ()
+        mini_move.move_selection('down')
+      end,
+      "block move bottom",
+    },
+    ["."] = {
+      function ()
+        mini_move.move_selection('up')
+      end,
+      "block move top",
     },
   },
   i = {

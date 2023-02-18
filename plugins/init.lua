@@ -173,6 +173,7 @@ local plugins = {
       require('numb').setup()
     end
   },
+  ['echasnovski/mini.nvim'] = { },
 }
 
 
