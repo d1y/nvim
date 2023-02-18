@@ -31,6 +31,12 @@ local plugins = {
   },
   -- 语法增强(高亮括号颜色)
   ['mrjones2014/nvim-ts-rainbow'] = {},
+  ['kiyoon/treesitter-indent-object.nvim'] = {
+    before = {"nvim-treesitter", "indent-blankline" },
+    config = function ()
+      require("treesitter_indent_object").setup()
+    end
+  },
   ["nvim-treesitter/nvim-treesitter"] = {
     after = {
       "nvim-ts-rainbow",
