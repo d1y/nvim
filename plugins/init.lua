@@ -26,6 +26,13 @@ local plugins = {
        enabled = false,
      },
   },
+  -- telescope frecency
+  ["nvim-telescope/telescope-frecency.nvim"] = {
+    requires = {"kkharji/sqlite.lua"},
+    config = function()
+      require"telescope".load_extension("frecency")
+    end,
+  },
   ["nvim-telescope/telescope.nvim"] = {
     override_options = overrides.telescope,
   },

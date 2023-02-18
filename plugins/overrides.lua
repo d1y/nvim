@@ -99,7 +99,6 @@ M.telescope = {
       height = 0.80,
     }
   },
-  -- extensions_list = {  },
 }
 
 return M
