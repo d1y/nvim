@@ -3,6 +3,7 @@ local overrides = require "custom.plugins.overrides"
 local plugins = {
   ["goolord/alpha-nvim"] = {
     disable = false,
+    override_options = overrides.alpha,
   },
   ["nvim-tree/nvim-tree.lua"] = {
     disable = true,
@@ -24,12 +25,6 @@ local plugins = {
      tabufline = {
        enabled = false,
      },
-  },
-  ["rebelot/heirline.nvim"] = {
-    config = function()
-      print("i'm here")
-      require("heirline").setup {}
-    end
   },
   -- 语法增强(高亮括号颜色)
   ['mrjones2014/nvim-ts-rainbow'] = {},
