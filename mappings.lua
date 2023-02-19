@@ -31,7 +31,16 @@ M.diy = {
   },
   n = {
     ["<leader>F"] = {
-      "<cmd> Telescope git_files <CR>",
+      function ()
+        local _, builtin = pcall(require, "telescope.builtin")
+        local opts = {
+          previewer = false
+        }
+        local ok = pcall(builtin.git_files, opts)
+        if not ok then
+          builtin.find_files(opts)
+        end
+      end,
       "show git files(telescope)",
     },
     ["<leader>n"] = {
