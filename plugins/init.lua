@@ -126,6 +126,9 @@ local plugins = {
     config = function ()
       local neotree = require("neo-tree")
       neotree.setup {
+        window = {
+          width = 24,
+        },
         filesystem = {
           filtered_items = {
             hide_dotfiles = false,
