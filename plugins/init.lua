@@ -199,7 +199,12 @@ local plugins = {
         quit = false,
       }
     end
-  }
+  },
+  ['weilbith/nvim-code-action-menu'] = {
+    config = {
+      cmd = 'CodeActionMenu',
+    }
+  },
 }
 
 
