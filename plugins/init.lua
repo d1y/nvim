@@ -179,9 +179,11 @@ local plugins = {
           diagnostics = "nvim_lsp",
           offsets = {{
             filetype = 'neo-tree',
-            text = "File Explorer",
-            highlight = "Directory",
-            text_align = "left"
+            text = "=͟͟͞͞=͟͟͞͞(●⁰ꈊ⁰● |||)",
+            text_align = "center",
+            highlight = "PanelHeading",
+            padding = 1,
+            separator = true,
           }}
         }
       }
