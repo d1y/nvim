@@ -60,9 +60,7 @@ M.diy = {
       "goto next buffer",
     },
     ["<leader>q"] = {
-      function()
-        require("nvchad_ui.tabufline").close_buffer()
-      end,
+      ":BufDel <CR>",
       "close buffer",
     },
     ["gh"] = {
@@ -117,6 +115,10 @@ M.diy = {
     ["<leader>wo"] = {
       "<C-w>o",
       "only show current buffer",
+    },
+    ["\\"] = {
+      "<cmd> BufferLinePick <CR>",
+      "pick buffer line",
     },
   },
   x = {
