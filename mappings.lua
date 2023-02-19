@@ -72,6 +72,10 @@ M.diy = {
       ":BufDel <CR>",
       "close buffer",
     },
+    ["<leader>Q"] = {
+      ":q! <CR>",
+      "close buffer(:q)",
+    },
     ["gh"] = {
       function()
         vim.lsp.buf.hover()
