@@ -133,6 +133,21 @@ M.diy = {
       "<cmd> BufferLinePick <CR>",
       "pick buffer line",
     },
+    ["<leader>lD"] = {
+      function ()
+        local match_str =  "Delete all unused imports"
+        vim.lsp.buf.code_action({
+          apply = true,
+          filter = function(val)
+            if val.title == match_str then
+              return true
+            end
+            return false
+          end,
+        })
+      end,
+      "remove all unused import(lsp function)"
+    }
   },
   x = {
     ["<"] = {
