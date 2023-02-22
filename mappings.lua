@@ -174,11 +174,11 @@ M.diy = {
       end,
       "block move top",
     },
-    ['t'] = {
+    ['1'] = {
       '<cmd> Translate <CR>',
       '选中翻译并发音',
     },
-    ['p'] = {
+    ['2'] = {
       '<cmd> TransPlay <CR>',
       '选中文本发音',
     }
