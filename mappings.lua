@@ -38,7 +38,7 @@ M.diy = {
           preview = false,
         }))
         if not ok then
-          builtin.find_files(opts, themes.get_dropdown())
+          builtin.find_files(themes.get_dropdown())
         end
       end,
       "show git files(telescope)",
