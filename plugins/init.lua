@@ -32,6 +32,9 @@ local plugins = {
   ["nvim-telescope/telescope.nvim"] = {
     override_options = overrides.telescope,
   },
+  ["lewis6991/gitsigns.nvim"] = {
+    override_options = overrides.gitsign,
+  },
   -- 语法增强(高亮括号颜色)
   ['mrjones2014/nvim-ts-rainbow'] = {},
   ['kiyoon/treesitter-indent-object.nvim'] = {
