@@ -5,11 +5,20 @@ local plugins = {
     disable = false,
     override_options = overrides.alpha,
   },
+  ["hrsh7th/nvim-cmp"] = {
+    override_options = overrides.cmp,
+  },
   ["nvim-tree/nvim-tree.lua"] = {
     disable = true,
   },
   ["folke/which-key.nvim"] = {
     disable = false,
+  },
+  ["SmiteshP/nvim-navic"] = {
+    module = "nvim-navic",
+    config = function()
+      require("nvim-navic").setup()
+    end,
   },
   ["neovim/nvim-lspconfig"] = {
     config = function()
@@ -205,6 +214,24 @@ local plugins = {
       cmd = 'CodeActionMenu',
     }
   },
+  ["tzachar/cmp-tabnine"] = {
+     after = "nvim-cmp",
+     run = "./install.sh",
+     config = function ()
+      return {
+        max_lines = 1000,
+        max_num_results = 5,
+        sort = true,
+        run_on_every_keystroke = true,
+        show_prediction_strength = false
+      }
+     end
+  },
+  ["akinsho/toggleterm.nvim"] = {
+    config = function ()
+      require("toggleterm").setup()
+    end
+  }
 }
 
 
