@@ -98,8 +98,8 @@ M.telescope = {
       horizontal = {
         prompt_position = "bottom",
       },
-      width = 0.72,
-      height = 0.80,
+      width = 0.60,
+      height = 0.72,
     }
   },
 }
