@@ -136,7 +136,7 @@ local plugins = {
       local neotree = require("neo-tree")
       neotree.setup {
         window = {
-          width = 24,
+          width = 48,
         },
         filesystem = {
           filtered_items = {
@@ -230,6 +230,15 @@ local plugins = {
   ["akinsho/toggleterm.nvim"] = {
     config = function ()
       require("toggleterm").setup()
+    end
+  },
+  ["JuanZoran/Trans.nvim"] = {
+    run = 'bash ./install.sh',
+    requires = 'kkharji/sqlite.lua',
+    config = function ()
+      require'Trans'.setup {
+        theme = 'tokyonight',
+      }
     end
   }
 }
