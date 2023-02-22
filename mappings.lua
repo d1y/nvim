@@ -33,12 +33,12 @@ M.diy = {
     ["<leader>F"] = {
       function ()
         local _, builtin = pcall(require, "telescope.builtin")
-        local opts = {
-          previewer = false
-        }
-        local ok = pcall(builtin.git_files, opts)
+        local _, themes = pcall(require, "telescope.themes")
+        local ok = pcall(builtin.git_files, themes.get_dropdown({
+          preview = false,
+        }))
         if not ok then
-          builtin.find_files(opts)
+          builtin.find_files(opts, themes.get_dropdown())
         end
       end,
       "show git files(telescope)",
