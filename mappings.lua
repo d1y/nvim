@@ -174,14 +174,6 @@ M.diy = {
       end,
       "block move top",
     },
-    ['1'] = {
-      '<cmd> Translate <CR>',
-      '选中翻译并发音',
-    },
-    ['2'] = {
-      '<cmd> TransPlay <CR>',
-      '选中文本发音',
-    }
   },
   i = {
     ["jj"] = { "<ESC>", "alias <ESC>" },

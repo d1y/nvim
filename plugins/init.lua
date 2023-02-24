@@ -230,20 +230,6 @@ local plugins = {
       }
      end
   },
-  ["akinsho/toggleterm.nvim"] = {
-    config = function ()
-      require("toggleterm").setup()
-    end
-  },
-  ["JuanZoran/Trans.nvim"] = {
-    run = 'bash ./install.sh',
-    requires = 'kkharji/sqlite.lua',
-    config = function ()
-      require'Trans'.setup {
-        theme = 'tokyonight',
-      }
-    end
-  }
 }
 
 
