@@ -238,6 +238,15 @@ local plugins = {
     config = function ()
      require("neogit").setup {}
     end
+  },
+  ["aserowy/tmux.nvim"] = {
+    config = function ()
+      require("tmux").setup {
+        navigation = {
+          enable_default_keybindings = true,
+        },
+      }
+    end
   }
 }
 
