@@ -133,6 +133,14 @@ M.diy = {
       "<cmd> BufferLinePick <CR>",
       "pick buffer line",
     },
+    ['<leader>li'] = {
+      '<CMD> LspInfo <CR>',
+      'show lsp info'
+    },
+    ['<leader>lr'] = {
+      '<CMD> LspRestart <CR>',
+      'restart lsp server',
+    },
     ["<leader>lD"] = {
       function ()
         local match_str =  "Delete all unused imports"
