@@ -198,4 +198,12 @@ for _, value in ipairs(tmux_mappings) do
   }
 end
 
+-- new tmux window
+M.tmux_diy.n['11'] = {
+  function ()
+    os.execute('tmux new-window')
+  end,
+  'new tmux window',
+}
+
 return M
