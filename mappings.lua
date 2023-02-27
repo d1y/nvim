@@ -173,6 +173,7 @@ M.diy = {
         mini_move.move_selection('up')
       end,
       "block move top",
+      dfsdf
     },
   },
   i = {
