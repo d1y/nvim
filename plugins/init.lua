@@ -139,7 +139,7 @@ local plugins = {
       local neotree = require("neo-tree")
       neotree.setup {
         window = {
-          width = 48,
+          width = 32,
         },
         filesystem = {
           filtered_items = {
@@ -230,6 +230,12 @@ local plugins = {
       }
      end
   },
+  ["LudoPinelli/comment-box.nvim"] = { },
+  ["TimUntersberger/neogit"] = {
+    config = function ()
+     require("neogit").setup {}
+    end
+  }
 }
 
 
