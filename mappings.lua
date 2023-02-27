@@ -102,7 +102,7 @@ M.diy = {
       "packer.vim sync packages",
     },
     -- lsp code action menu
-    ["0"] = {
+    ["<leader>lc"] = {
       "<cmd> CodeActionMenu <CR>",
       "show code action menu(lsp extends)",
     },
@@ -173,7 +173,6 @@ M.diy = {
         mini_move.move_selection('up')
       end,
       "block move top",
-      dfsdf
     },
   },
   i = {
@@ -200,7 +199,7 @@ for _, value in ipairs(tmux_mappings) do
 end
 
 -- new tmux window
-M.tmux_diy.n['11'] = {
+M.tmux_diy.n['0'] = {
   function ()
     os.execute('tmux new-window')
   end,
