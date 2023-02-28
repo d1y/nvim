@@ -102,6 +102,7 @@ M.telescope = {
       height = 0.72,
     }
   },
+  extensions_list = { "themes", "terms", "smart_open" },
 }
 
 M.gitsign = {

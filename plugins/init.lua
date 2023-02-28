@@ -247,6 +247,12 @@ local plugins = {
         },
       }
     end
+  },
+  ["danielfalk/smart-open.nvim"] = {
+    requires = {
+      "nvim-telescope/telescope.nvim",
+      "kkharji/sqlite.lua",
+    },
   }
 }
 
