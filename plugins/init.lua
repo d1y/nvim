@@ -253,7 +253,8 @@ local plugins = {
       "nvim-telescope/telescope.nvim",
       "kkharji/sqlite.lua",
     },
-  }
+  },
+  ["folke/neodev.nvim"] = { }
 }
 
 

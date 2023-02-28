@@ -20,3 +20,21 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities,
   }
 end
+
+local function autoInjectLspHelper()
+  local flag, neodev = pcall(require, "neodev")
+  local msg = string.format('load neodev is %s', tostring(flag))
+  neodev.setup({})
+  lspconfig.lua_ls.setup({
+    settings = {
+      Lua = {
+        completion = {
+          callSnippet = "Replace"
+        }
+      }
+    }
+  })
+end
+
+autoInjectLspHelper()
+
