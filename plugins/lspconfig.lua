@@ -15,7 +15,6 @@ for _, lsp in ipairs(servers) do
       if client.server_capabilities.signatureHelpProvider then
         require("nvchad_ui.signature").setup(client)
       end
-      require("nvim-navic").attach(client, bufnr)
     end,
     capabilities = capabilities,
   }

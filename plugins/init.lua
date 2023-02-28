@@ -14,12 +14,6 @@ local plugins = {
   ["folke/which-key.nvim"] = {
     disable = false,
   },
-  ["SmiteshP/nvim-navic"] = {
-    module = "nvim-navic",
-    config = function()
-      require("nvim-navic").setup()
-    end,
-  },
   ["neovim/nvim-lspconfig"] = {
     config = function()
       require "plugins.configs.lspconfig"
