@@ -195,7 +195,7 @@ M.tmux_diy = {
 -- map 1 - 5 go to tmux window
 local tmux_mappings = { 1,2,3,4,5 }
 for _, value in ipairs(tmux_mappings) do
-  local cmd = string.format('tmux select-window -t %d', value)
+  local cmd = string.format('tmux select-window -t %d > /dev/null 2>&1 &', value)
   local key = tostring(value)
   local desc = string.format("go to tmux window %d", value)
   M.tmux_diy.n[key] = {
