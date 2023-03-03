@@ -113,6 +113,9 @@ local plugins = {
       require("bigfile").config {}
     end
   },
+  ["nvim-tree/nvim-web-devicons"] = {
+    override_options = overrides.devicons,
+  },
   -- 记住上次编辑的位置
   ["ethanholz/nvim-lastplace"] = {
     config = function ()
