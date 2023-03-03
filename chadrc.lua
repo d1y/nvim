@@ -3,7 +3,7 @@ require('custom.options')
 local M = {}
 
 M.ui = {
-  theme = "radium",
+  theme = "nightowl",
   transparency = true,
 }
 
