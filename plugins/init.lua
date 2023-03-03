@@ -215,6 +215,7 @@ local plugins = {
     }
   },
   ["tzachar/cmp-tabnine"] = {
+     disable = true,
      after = "nvim-cmp",
      run = "./install.sh",
      config = function ()

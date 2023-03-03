@@ -117,7 +117,7 @@ M.cmp = {
     { name = "buffer" },
     { name = "nvim_lua" },
     { name = "path" },
-    { name = "cmp_tabnine"}
+    -- { name = "cmp_tabnine"}
   },
 }
 
