@@ -3,7 +3,7 @@ require('custom.options')
 local M = {}
 
 M.ui = {
-  theme = "nightowl",
+  theme = "vscode_dark",
   transparency = true,
 }
 
