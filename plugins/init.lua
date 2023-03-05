@@ -297,7 +297,8 @@ local plugins = {
       "kkharji/sqlite.lua",
     },
   },
-  ["folke/neodev.nvim"] = { }
+  ["folke/neodev.nvim"] = {},
+  ["gcmt/wildfire.vim"] = {},
 }
 
 
