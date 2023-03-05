@@ -223,7 +223,11 @@ local plugins = {
       require('numb').setup()
     end
   },
-  ['echasnovski/mini.nvim'] = { },
+  ['echasnovski/mini.nvim'] = {
+    config = function ()
+      require('mini.cursorword').setup()
+    end
+  },
   ["Pocco81/true-zen.nvim"] = {
     config = function ()
       require("true-zen").setup { }
