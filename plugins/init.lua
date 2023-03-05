@@ -299,6 +299,13 @@ local plugins = {
   },
   ["folke/neodev.nvim"] = {},
   ["gcmt/wildfire.vim"] = {},
+  -- 高亮treesitter
+  ['m-demare/hlargs.nvim'] = {
+    requires = { 'nvim-treesitter/nvim-treesitter' },
+    config = function ()
+      require('hlargs').setup()
+    end
+  },
 }
 
 
