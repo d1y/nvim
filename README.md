@@ -23,6 +23,10 @@ cp .tmux/.tmux.conf.local .
 patch < ~/.config/nvim/lua/custom/tmux.patch -p1 ~/.tmux.conf.local
 ```
 
+> my terminal(iTerm2) support set wallpaper
+
+my current wallpaper: https://wallhaven.cc/w/we52yp
+
 # screenhots
 
 2023/03/07
