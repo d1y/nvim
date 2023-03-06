@@ -339,6 +339,7 @@ local plugins = {
       require('hlargs').setup()
     end
   },
+  ['kdheepak/lazygit.nvim'] = {},
 }
 
 

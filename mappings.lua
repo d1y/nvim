@@ -159,7 +159,19 @@ M.diy = {
         })
       end,
       "remove all unused import(lsp function)"
-    }
+    },
+    ["<leader>gg"] = {
+      "<cmd> LazyGit <CR>",
+      "show lazygit window",
+    },
+    ["<leader>gf"] = {
+      "<cmd> LazyGitFilter <CR>",
+      "show project commits(lazygit)"
+    },
+    ["<leader>gF"] = {
+      "<cmd> LazyGitFilter <CR>",
+      "show current file commits(lazygit)"
+    },
   },
   x = {
     ["<"] = {
