@@ -61,15 +61,18 @@ M.diy = {
       "toggle floating term",
     },
     ["<leader>G"] = {
-      ":BufferLineCyclePrev<CR>",
+      "<cmd> BufferPrevious <CR>",
+      -- "<cmd> BufferLineCyclePrev <CR>",
       "goto prev buffer",
     },
     ["<leader>H"] = {
-      ":BufferLineCycleNext<CR>",
+      "<cmd> BufferNext <CR>",
+      -- "<cmd> BufferLineCycleNext <CR>",
       "goto next buffer",
     },
     ["<leader>q"] = {
-      ":BufDel <CR>",
+      "<cmd> BufferClose <CR>",
+      -- ":BufDel <CR>",
       "close buffer",
     },
     ["<leader>Q"] = {
@@ -130,7 +133,8 @@ M.diy = {
       "only show current buffer",
     },
     ["\\"] = {
-      "<cmd> BufferLinePick <CR>",
+      "<cmd> BufferPick <CR>",
+      -- "<cmd> BufferLinePick <CR>",
       "pick buffer line",
     },
     ['<leader>li'] = {

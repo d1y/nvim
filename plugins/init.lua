@@ -234,7 +234,33 @@ local plugins = {
       require("true-zen").setup { }
     end
   },
+  -- TODO: use barbar.nvim
+  ["romgrk/barbar.nvim"] = {
+    after = "ui",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons",
+      "MunifTanjim/nui.nvim",
+    },
+    config = function ()
+      require'bufferline'.setup {
+        animation = false,
+        auto_hide = false,
+        tabpages = true,
+        clickable = true,
+        icons = true,
+        icon_separator_active = '▎',
+        icon_separator_inactive = '▎',
+        icon_close_tab = '',
+        icon_close_tab_modified = '●',
+        icon_pinned = '車',
+        letters = 'asdfjkl;ghnmxcvbziowerutyqpASDFJKLGHNMXCVBZIOWERUTYQP',
+        no_name_title = nil,
+      }
+    end
+  },
   ["akinsho/bufferline.nvim"] = {
+    disable = true,
     config = function ()
       require("bufferline").setup{
         options = {
@@ -251,7 +277,9 @@ local plugins = {
       }
     end
   },
+  -- barbar.nvim not use the plugin
   ["ojroques/nvim-bufdel"] = {
+    disable = true,
     config = function ()
       require('bufdel').setup {
         next = 'tabs',
