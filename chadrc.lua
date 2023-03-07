@@ -1,10 +1,16 @@
+local utils = require("custom.utils")
 require('custom.options')
 
 local M = {}
 
+local transparency = false
+if utils.isMacos() then
+  transparency = true
+end
+
 M.ui = {
-  theme = "vscode_dark",
-  transparency = true,
+  theme = "radium",
+  transparency = transparency,
 }
 
 M.nvimtree = {
