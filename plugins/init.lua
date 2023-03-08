@@ -340,6 +340,14 @@ local plugins = {
     end
   },
   ['kdheepak/lazygit.nvim'] = {},
+  ['JuanZoran/Trans.nvim'] = {
+    run = 'bash ./install.sh',
+    requires = 'kkharji/sqlite.lua',
+    config = function ()
+      require("Trans").setup {}
+      vim.keymap.set({"n", 'x'}, "mm", '<Cmd>Translate<CR>', { desc = ' Translate' })
+    end
+  }
 }
 
 
