@@ -292,20 +292,6 @@ local plugins = {
       cmd = 'CodeActionMenu',
     }
   },
-  ["tzachar/cmp-tabnine"] = {
-     disable = true,
-     after = "nvim-cmp",
-     run = "./install.sh",
-     config = function ()
-      return {
-        max_lines = 1000,
-        max_num_results = 5,
-        sort = true,
-        run_on_every_keystroke = true,
-        show_prediction_strength = false
-      }
-     end
-  },
   ["LudoPinelli/comment-box.nvim"] = { },
   ["TimUntersberger/neogit"] = {
     config = function ()
@@ -347,7 +333,22 @@ local plugins = {
       require("Trans").setup {}
       vim.keymap.set({"n", 'x'}, "mm", '<Cmd>Translate<CR>', { desc = ' Translate' })
     end
-  }
+  },
+  ["tzachar/cmp-tabnine"] = {
+     after = "nvim-cmp",
+     run = "./install.sh",
+     config = function ()
+      return {
+        max_lines = 1000,
+        max_num_results = 5,
+        sort = true,
+        run_on_every_keystroke = true,
+        show_prediction_strength = false
+      }
+     end
+  },
+  ["ray-x/cmp-treesitter"] = { after = "nvim-cmp" },
+  ["KadoBot/cmp-plugins"] = { after = "nvim-cmp" },
 }
 
 
