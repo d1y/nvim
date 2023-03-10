@@ -234,8 +234,8 @@ M.window_resize = {
   n = {
   ['<S-UP>'] = { ':resize +2<CR>', 'up resize'},
   ['<S-Down>']= { ':resize -2<CR>', 'down resize'},
-  ['<S-Left>']= { ':vertical resize -2<CR>', 'left resize'},
-  ['<S-Right>']= { ':vertical resize +2<CR>', 'right resize'},
+  ['<S-Right>']= { ':vertical resize -2<CR>', 'left resize'},
+  ['<S-Left>']= { ':vertical resize +2<CR>', 'right resize'},
   }
 }
 
