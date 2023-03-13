@@ -71,8 +71,8 @@ M.diy = {
       "goto next buffer",
     },
     ["<leader>q"] = {
-      "<cmd> BufferClose <CR>",
-      -- ":BufDel <CR>",
+      -- "<cmd> BufferClose <CR>",
+      "<CMD> BufDel <CR>",
       "close buffer",
     },
     ["<leader>Q"] = {
