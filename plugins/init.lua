@@ -175,6 +175,7 @@ local plugins = {
       "nvim-tree/nvim-web-devicons",
       "MunifTanjim/nui.nvim",
     },
+    after = "ui",
     config = function ()
       local neotree = require("neo-tree")
       neotree.setup {
