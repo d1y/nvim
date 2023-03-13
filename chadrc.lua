@@ -1,10 +1,10 @@
-local utils = require("custom.utils")
 require('custom.options')
 
 local M = {}
 
 local transparency = false
-if utils.isMacos() then
+
+if vim.fn.has('mac') == 1 then
   transparency = true
 end
 
