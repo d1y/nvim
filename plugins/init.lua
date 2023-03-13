@@ -236,6 +236,7 @@ local plugins = {
   },
   -- TODO: use barbar.nvim
   ["romgrk/barbar.nvim"] = {
+    disable = true,
     after = "ui",
     requires = {
       "nvim-lua/plenary.nvim",
@@ -260,7 +261,7 @@ local plugins = {
     end
   },
   ["akinsho/bufferline.nvim"] = {
-    disable = true,
+    disable = false,
     config = function ()
       require("bufferline").setup{
         options = {
@@ -279,7 +280,7 @@ local plugins = {
   },
   -- barbar.nvim not use the plugin
   ["ojroques/nvim-bufdel"] = {
-    disable = true,
+    disable = false,
     config = function ()
       require('bufdel').setup {
         next = 'tabs',

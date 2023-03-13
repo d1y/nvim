@@ -61,13 +61,13 @@ M.diy = {
       "toggle floating term",
     },
     ["<leader>G"] = {
-      "<cmd> BufferPrevious <CR>",
-      -- "<cmd> BufferLineCyclePrev <CR>",
+      -- "<cmd> BufferPrevious <CR>",
+      "<cmd> BufferLineCyclePrev <CR>",
       "goto prev buffer",
     },
     ["<leader>H"] = {
-      "<cmd> BufferNext <CR>",
-      -- "<cmd> BufferLineCycleNext <CR>",
+      -- "<cmd> BufferNext <CR>",
+      "<cmd> BufferLineCycleNext <CR>",
       "goto next buffer",
     },
     ["<leader>q"] = {
@@ -133,8 +133,8 @@ M.diy = {
       "only show current buffer",
     },
     ["\\"] = {
-      "<cmd> BufferPick <CR>",
-      -- "<cmd> BufferLinePick <CR>",
+      -- "<cmd> BufferPick <CR>",
+      "<cmd> BufferLinePick <CR>",
       "pick buffer line",
     },
     ['<leader>li'] = {
