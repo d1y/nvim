@@ -38,6 +38,12 @@ local plugins = {
       require("treesitter_indent_object").setup()
     end
   },
+  ["windwp/nvim-ts-autotag"] = {
+    before = {"nvim-treesitter"},
+    config = function ()
+      require('nvim-ts-autotag').setup()
+    end
+  },
   ["nvim-treesitter/nvim-treesitter"] = {
     after = {
       "nvim-ts-rainbow",
