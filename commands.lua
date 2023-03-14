@@ -13,6 +13,9 @@ end, {
   nargs = "*",
 })
 
+create('PeekOpen', require('peek').open, {})
+create('PeekClose', require('peek').close, {})
+
 -- auto-wide neotree
 -- local function is_neotree_open()
 -- 	for _, win in ipairs(vim.api.nvim_tabpage_list_wins(0)) do

@@ -357,6 +357,12 @@ local plugins = {
   },
   ["ray-x/cmp-treesitter"] = { after = "nvim-cmp" },
   ["KadoBot/cmp-plugins"] = { after = "nvim-cmp" },
+  ['toppair/peek.nvim'] = {
+    run = 'deno task --quiet build:fast',
+    config = function ()
+      require('peek').setup {}
+    end
+  }
 }
 
 
