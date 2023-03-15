@@ -60,6 +60,11 @@ M.diy = {
       end,
       "toggle floating term",
     },
+    ["\\"] = {
+      -- "<cmd> BufferPick <CR>",
+      "<cmd> BufferLinePick <CR>",
+      "pick buffer line",
+    },
     ["<leader>G"] = {
       -- "<cmd> BufferPrevious <CR>",
       "<cmd> BufferLineCyclePrev <CR>",
@@ -98,10 +103,6 @@ M.diy = {
       "<cmd> qa! <CR>",
       "quit neovim"
     },
-    ["7"] = {
-      "<cmd> Telescope <CR>",
-      "open telescope float window"
-    },
     -- packer.vim 插件同步
     ["6"] = {
       "<cmd> PackerSync <CR>",
@@ -112,33 +113,17 @@ M.diy = {
       "<cmd> CodeActionMenu <CR>",
       "show code action menu(lsp extends)",
     },
-    ["<leader>ta"] = { "<cmd> TZAtaraxis <CR>", "truzen ataraxis" },
-    ["<leader>tm"] = { "<cmd> TZMinimalist <CR>", "truzen minimal" },
-    ["<leader>tf"] = { "<cmd> TZFocus <CR>", "truzen focus" },
+    ["<leader>wa"] = {
+      "<cmd> TZAtaraxis <CR>",
+      "truzen ataraxis",
+    },
     ["<leader>wl"] = {
       "<C-w>v <CR>",
       "split window to right",
     },
-    ["vai"] = {
-      function ()
-        require'treesitter_indent_object.textobj'.select_indent_outer()
-      end,
-      "选择一个代码段全部(function / class)",
-    },
-    ["vii"] = {
-      function ()
-        require'treesitter_indent_object.textobj'.select_indent_inner()
-      end,
-      "选择代码段内部(function / class)"
-    },
     ["<leader>wo"] = {
       "<C-w>o",
       "only show current buffer",
-    },
-    ["\\"] = {
-      -- "<cmd> BufferPick <CR>",
-      "<cmd> BufferLinePick <CR>",
-      "pick buffer line",
     },
     ['<leader>li'] = {
       '<CMD> LspInfo <CR>',
@@ -170,10 +155,6 @@ M.diy = {
     ["<leader>gf"] = {
       "<cmd> LazyGitFilter <CR>",
       "show project commits(lazygit)"
-    },
-    ["<leader>gF"] = {
-      "<cmd> LazyGitFilter <CR>",
-      "show current file commits(lazygit)"
     },
   },
   x = {

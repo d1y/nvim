@@ -31,13 +31,13 @@ local plugins = {
   },
   -- 语法增强(高亮括号颜色)
   ['mrjones2014/nvim-ts-rainbow'] = {},
-  ['kiyoon/treesitter-indent-object.nvim'] = {
-    disable = true,
-    before = {"nvim-treesitter", "indent-blankline" },
-    config = function ()
-      require("treesitter_indent_object").setup()
-    end
-  },
+  -- ['kiyoon/treesitter-indent-object.nvim'] = {
+  --   disable = true,
+  --   before = {"nvim-treesitter", "indent-blankline" },
+  --   config = function ()
+  --     require("treesitter_indent_object").setup()
+  --   end
+  -- },
   ["windwp/nvim-ts-autotag"] = {
     before = {"nvim-treesitter"},
     config = function ()
