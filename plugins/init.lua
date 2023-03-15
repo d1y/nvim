@@ -362,6 +362,11 @@ local plugins = {
     config = function ()
       require('peek').setup {}
     end
+  },
+  ["sindrets/diffview.nvim"] = {
+    requires = {
+      "nvim-lua/plenary.nvim",
+    },
   }
 }
 
