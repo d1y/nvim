@@ -1,4 +1,3 @@
-local on_attach = require("plugins.configs.lspconfig").on_attach
 local capabilities = require("plugins.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
@@ -21,8 +20,10 @@ for _, lsp in ipairs(servers) do
 end
 
 local function autoInjectLspHelper()
-  local flag, neodev = pcall(require, "neodev")
-  local msg = string.format('load neodev is %s', tostring(flag))
+  local _, neodev = pcall(require, "neodev")
+  if not _ then
+    return
+  end
   neodev.setup({})
   lspconfig.lua_ls.setup({
     settings = {
