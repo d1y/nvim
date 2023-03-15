@@ -79,6 +79,9 @@ M.diy = {
       ":q! <CR>",
       "close buffer(:q)",
     },
+    ["gd"] = {
+      "<CMD> Telescope lsp_definitions <CR>"
+    },
     ["gh"] = {
       function()
         vim.lsp.buf.hover()
