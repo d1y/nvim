@@ -1,5 +1,5 @@
---- 1	2023-03-07 00:47:46.000000000 +0800
-+++ /Users/d1y/.tmux.conf.local	2023-02-28 15:28:07.000000000 +0800
+--- raw.conf	2023-03-16 01:28:04.000000000 +0800
++++ .tmux.conf.local	2023-03-16 01:22:42.000000000 +0800
 @@ -5,6 +5,16 @@
  #         Copyright 2012— Gregory Pakosz (@gpakosz).
  
@@ -77,7 +77,7 @@
  tmux_conf_theme_window_status_attr="none"
 -tmux_conf_theme_window_status_format="#I #W"
 -#tmux_conf_theme_window_status_format="#{circled_window_index} #W"
-+tmux_conf_theme_window_status_format="#I #(despell #W) #W"
++tmux_conf_theme_window_status_format=">#I #W"
 +#tmux_conf_theme_window_status_format="#{circled_window_index} #(despell #W) #W"
  #tmux_conf_theme_window_status_format="#I #W#{?window_bell_flag,🔔,}#{?window_zoomed_flag,🔍,}"
  
@@ -93,14 +93,14 @@
  #tmux_conf_theme_window_status_current_format="#I #W#{?window_zoomed_flag,🔍,}"
  
  # window activity status style
-@@ -242,12 +235,12 @@
+@@ -242,17 +235,17 @@
  #     - #{uptime_s}
  #     - #{username}
  #     - #{username_ssh}
 -tmux_conf_theme_status_left=" ❐ #S | ↑#{?uptime_y, #{uptime_y}y,}#{?uptime_d, #{uptime_d}d,}#{?uptime_h, #{uptime_h}h,}#{?uptime_m, #{uptime_m}m,} "
 -tmux_conf_theme_status_right=" #{prefix}#{mouse}#{pairing}#{synchronized}#{?battery_status,#{battery_status},}#{?battery_bar, #{battery_bar},}#{?battery_percentage, #{battery_percentage},} , %R , %d %b | #{username}#{root} | #{hostname} "
-+tmux_conf_theme_status_left=" 🌙 🌠 🌌 🌃 "
-+tmux_conf_theme_status_right=" #{prefix}#{mouse}#{pairing}#{synchronized}#{?battery_status,#{battery_status},}#{?battery_bar, #{battery_bar},}#{?battery_percentage, #{battery_percentage},} , 🗓  %m月%d日,⏰ %R | 🐳 #(ifconfig | grep 'inet.*netmask.*broadcast' | awk '{print $2}') | #{username}#{root}"
++tmux_conf_theme_status_left=" 🌌 🏙  🌃 🌠 🌙 "
++tmux_conf_theme_status_right="#{network_bandwidth}#{prefix} #{pairing}#{synchronized}#{?battery_status,#{battery_status},}#{?battery_bar, #{battery_bar},}#{?battery_percentage, #{battery_percentage},} , 🗓  %m月%d日,⏰ %R | 🐳 #(ifconfig | grep 'inet.*netmask.*broadcast' | awk '{print $2}') | #{username}#{root} "
  
  # status left style
 -tmux_conf_theme_status_left_fg="$tmux_conf_theme_colour_6,$tmux_conf_theme_colour_7,$tmux_conf_theme_colour_8"
@@ -110,6 +110,39 @@
  tmux_conf_theme_status_left_attr="bold,none,none"
  
  # status right style
+-tmux_conf_theme_status_right_fg="$tmux_conf_theme_colour_12,$tmux_conf_theme_colour_13,$tmux_conf_theme_colour_14"
+-tmux_conf_theme_status_right_bg="$tmux_conf_theme_colour_15,$tmux_conf_theme_colour_16,$tmux_conf_theme_colour_17"
++tmux_conf_theme_status_right_fg="$tmux_conf_theme_colour_12,$tmux_conf_theme_colour_13,$tmux_conf_theme_colour_17"
++tmux_conf_theme_status_right_bg="$tmux_conf_theme_colour_15,$tmux_conf_theme_colour_3,$tmux_conf_theme_colour_4"
+ tmux_conf_theme_status_right_attr="none,none,bold"
+ 
+ # pairing indicator
+@@ -288,8 +281,8 @@
+ # battery bar symbols
+ tmux_conf_battery_bar_symbol_full="◼"
+ tmux_conf_battery_bar_symbol_empty="◻"
+-#tmux_conf_battery_bar_symbol_full="♥"
+-#tmux_conf_battery_bar_symbol_empty="·"
++# tmux_conf_battery_bar_symbol_full="♥"
++# tmux_conf_battery_bar_symbol_empty="·"
+ 
+ # battery bar length (in number of symbols), possible values are:
+ #   - auto
+@@ -318,10 +311,10 @@
+ #tmux_conf_battery_vbar_palette="#d70000,#ff5f00,#5fff00"  # red, orange, green
+ 
+ # symbols used to indicate whether battery is charging or discharging
+-tmux_conf_battery_status_charging="↑"       # U+2191
+-tmux_conf_battery_status_discharging="↓"    # U+2193
+-#tmux_conf_battery_status_charging="🔌"     # U+1F50C
+-#tmux_conf_battery_status_discharging="🔋"  # U+1F50B
++# tmux_conf_battery_status_charging="↑"       # U+2191
++# tmux_conf_battery_status_discharging="↓"    # U+2193
++tmux_conf_battery_status_charging="🔌"     # U+1F50C
++tmux_conf_battery_status_discharging="🔋"  # U+1F50B
+ 
+ # clock style (when you hit <prefix> + t)
+ # you may want to use %I:%M %p in place of %R in tmux_conf_theme_status_right
 @@ -336,7 +329,7 @@
  #   - false (default)
  #   - disabled
@@ -119,6 +152,15 @@
  tmux_conf_copy_to_os_clipboard=false
  
  
+@@ -347,7 +340,7 @@
+ #set -g history-limit 10000
+ 
+ # start with mouse mode enabled
+-#set -g mouse on
++set -g mouse on
+ 
+ # force Vi mode
+ #   really you should export VISUAL or EDITOR environment variable, see manual
 @@ -362,10 +355,10 @@
  # bind C-a send-prefix
  
@@ -132,7 +174,24 @@
  
  
  # -- tpm -----------------------------------------------------------------------
-@@ -435,4 +428,4 @@
+@@ -403,12 +396,11 @@
+ 
+ # to enable a plugin, use the 'set -g @plugin' syntax:
+ # visit https://github.com/tmux-plugins for available plugins
+-#set -g @plugin 'tmux-plugins/tmux-copycat'
+-#set -g @plugin 'tmux-plugins/tmux-cpu'
+-#set -g @plugin 'tmux-plugins/tmux-resurrect'
+-#set -g @plugin 'tmux-plugins/tmux-continuum'
+-#set -g @continuum-restore 'on'
++# 执行 <prefix> + I 安装插件
+ 
++# <prefix> + / => 搜索
++set -g @plugin 'tmux-plugins/tmux-copycat'
++set -g @plugin 'xamut/tmux-network-bandwidth'
+ 
+ # -- custom variables ----------------------------------------------------------
+ 
+@@ -435,4 +427,4 @@
  # }
  #
  # "$@"
