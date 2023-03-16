@@ -357,6 +357,7 @@ local plugins = {
   },
   ["ray-x/cmp-treesitter"] = { after = "nvim-cmp" },
   ["KadoBot/cmp-plugins"] = { after = "nvim-cmp" },
+  -- markdown 预览
   ['toppair/peek.nvim'] = {
     run = 'deno task --quiet build:fast',
     config = function ()
@@ -367,6 +368,14 @@ local plugins = {
     requires = {
       "nvim-lua/plenary.nvim",
     },
+  },
+  -- 自动缩进成一行(object)
+  ["Wansmer/treesj"] = {
+    requires = { 'nvim-treesitter' },
+    config = function ()
+      require('treesj').setup( { use_default_keymaps = false })
+      vim.keymap.set('n', '<leader>tm', require( 'treesj').toggle)
+    end
   }
 }
 
