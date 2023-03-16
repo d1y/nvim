@@ -376,7 +376,8 @@ local plugins = {
       require('treesj').setup( { use_default_keymaps = false })
       vim.keymap.set('n', '<leader>tm', require( 'treesj').toggle)
     end
-  }
+  },
+  ["tpope/vim-fugitive"] = { }
 }
 
 
