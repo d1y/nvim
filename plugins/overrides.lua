@@ -148,6 +148,7 @@ M.cmp = {
     { name = "cmp_tabnine"},
     { name = "treesitter"},
     { name = "plugins"},
+    { name = "codeium"},
   },
 }
 
