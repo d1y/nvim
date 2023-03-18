@@ -1,5 +1,25 @@
 local M = {}
 
+local buffer_option = {
+	-- Complete from all visible buffers (splits)
+	get_bufnrs = function()
+		local bufs = {}
+		for _, win in ipairs(vim.api.nvim_list_wins()) do
+			bufs[vim.api.nvim_win_get_buf(win)] = true
+		end
+		return vim.tbl_keys(bufs)
+	end,
+}
+
+local function deprioritize_snippet(entry1, entry2)
+	if entry1:get_kind() == types.lsp.CompletionItemKind.Snippet then
+		return false
+	end
+	if entry2:get_kind() == types.lsp.CompletionItemKind.Snippet then
+		return true
+	end
+end
+
 local function button(sc, txt, keybind)
   local sc_ = sc:gsub("%s", ""):gsub("SPC", "<leader>")
 
@@ -140,15 +160,14 @@ M.gitsign = {
 
 M.cmp = {
   sources = {
-    { name = "luasnip" },
-    { name = "nvim_lsp" },
-    { name = "buffer" },
-    { name = "nvim_lua" },
-    { name = "path" },
+    { name = "luasnip", priority = 7, max_item_count = 5 },
+    { name = "nvim_lsp", priority = 10, },
+    { name = "buffer", priority = 7, keyword_length = 5, option = buffer_option, max_item_count = 5 },
+    { name = "nvim_lua", priority = 5 },
+    { name = "path", priority = 4 },
     -- { name = "cmp_tabnine"},
     { name = "treesitter"},
     { name = "plugins"},
-    { name = "codeium"},
   },
 }
 
