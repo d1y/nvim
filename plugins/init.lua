@@ -393,6 +393,7 @@ local plugins = {
       require("stay-in-place").setup({})
     end
   },
+  -- 高亮代码
   ["shellRaining/hlchunk.nvim"] = {
     config = function ()
       require('hlchunk').setup({
@@ -402,6 +403,26 @@ local plugins = {
         blank = {
           enable = false,
         }
+      })
+    end
+  },
+  -- console.log
+  ["rareitems/printer.nvim"] = {
+    config = function ()
+      local function webPrint(_, b)
+        return string.format('console.log({%s})', b)
+      end
+      require('printer').setup({
+        keymap = "gp",
+         add_to_inside = function(text)
+            return ""
+         end,
+        formatters = {
+          typescript = webPrint,
+          javascript = webPrint,
+          vue = webPrint,
+          html = webPrint,
+        },
       })
     end
   }
