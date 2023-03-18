@@ -425,7 +425,27 @@ local plugins = {
         },
       })
     end
-  }
+  },
+  ["akinsho/git-conflict.nvim"] = {
+		config = function()
+      local conflict = require("git-conflict")
+      conflict.setup({
+        default_mappings = false,
+        default_commands = true,
+        disable_diagnostics = true,
+        highlights = {
+          incoming = "DiffText",
+          current = "DiffAdd",
+        },
+      })
+      vim.api.nvim_create_autocmd("User", {
+        pattern = "GitConflictDetected",
+        callback = function()
+          vim.notify("Conflict detected in " .. vim.fn.expand("<afile>"))
+        end,
+      })
+		end,
+	},
 }
 
 
