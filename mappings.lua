@@ -156,6 +156,10 @@ M.diy = {
       "<cmd> LazyGitFilter <CR>",
       "show project commits(lazygit)"
     },
+    ["<leader>P"] = {
+      "<CMD>lua require('custom.plugins.picker_telescope')()<CR>",
+      "Find word/file across project",
+    }
   },
   x = {
     ["<"] = {
