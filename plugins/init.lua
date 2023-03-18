@@ -319,6 +319,7 @@ local plugins = {
     end
   },
   ["ahmedkhalf/project.nvim"] = {
+    disable = true,
     requires = {
       "nvim-telescope/telescope.nvim",
     },
