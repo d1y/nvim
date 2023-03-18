@@ -318,6 +318,14 @@ local plugins = {
       }
     end
   },
+  ["ahmedkhalf/project.nvim"] = {
+    requires = {
+      "nvim-telescope/telescope.nvim",
+    },
+    config = function ()
+      require("project_nvim").setup {}
+    end
+  },
   ["danielfalk/smart-open.nvim"] = {
     requires = {
       "nvim-telescope/telescope.nvim",

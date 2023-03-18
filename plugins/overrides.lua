@@ -130,7 +130,7 @@ M.telescope = {
       height = 0.72,
     }
   },
-  extensions_list = { "themes", "terms", "smart_open" },
+  extensions_list = { "themes", "terms", "smart_open", "projects" },
 }
 
 M.gitsign = {
