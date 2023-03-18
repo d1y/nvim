@@ -392,6 +392,18 @@ local plugins = {
       require("stay-in-place").setup({})
     end
   },
+  ["shellRaining/hlchunk.nvim"] = {
+    config = function ()
+      require('hlchunk').setup({
+        indent = {
+          enable = false,
+        },
+        blank = {
+          enable = false,
+        }
+      })
+    end
+  }
 }
 
 
