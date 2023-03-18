@@ -386,6 +386,12 @@ local plugins = {
     end
   },
   ["Exafunction/codeium.vim"] = { },
+  -- 停留缩进位置
+  ["gbprod/stay-in-place.nvim"] = {
+    config = function ()
+      require("stay-in-place").setup({})
+    end
+  },
 }
 
 
