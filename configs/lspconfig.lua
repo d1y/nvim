@@ -37,4 +37,3 @@ local function autoInjectLspHelper()
 end
 
 autoInjectLspHelper()
-

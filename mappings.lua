@@ -93,6 +93,17 @@ M.diy = {
       end,
       "lsp hover",
     },
+    ['<leader>tm'] = {
+      function ()
+        local flag, sj = pcall(require, 'treesj')
+        if not flag then
+          print("load error")
+          return
+        end
+        sj.toggle()
+      end,
+      "toggle node under cursor"
+    },
     -- 禅模式
     ["9"] = {
       "<cmd> Twilight <CR>",

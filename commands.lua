@@ -13,8 +13,8 @@ end, {
   nargs = "*",
 })
 
-create('PeekOpen', require('peek').open, {})
-create('PeekClose', require('peek').close, {})
+-- create('PeekOpen', require('peek').open, {})
+-- create('PeekClose', require('peek').close, {})
 
 -- auto-wide neotree
 -- local function is_neotree_open()
