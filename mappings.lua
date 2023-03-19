@@ -159,7 +159,11 @@ M.diy = {
     ["<leader>P"] = {
       "<CMD>lua require('custom.plugins.picker_telescope')()<CR>",
       "Find word/file across project",
-    }
+    },
+    ["gr"] = {
+      "<CMD> Telescope lsp_references <CR>",
+      "lsp references(telescope)",
+    },
   },
   x = {
     ["<"] = {
