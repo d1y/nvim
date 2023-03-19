@@ -164,6 +164,12 @@ M.diy = {
       "<CMD> Telescope lsp_references <CR>",
       "lsp references(telescope)",
     },
+    ["<leader>fp"] = {
+      function ()
+        require("custom.plugins.applist")({})
+      end,
+      "show applist(macos)"
+    }
   },
   x = {
     ["<"] = {
