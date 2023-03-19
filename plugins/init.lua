@@ -421,7 +421,7 @@ local plugins = {
   ["VidocqH/lsp-lens.nvim"] = {
     config = function ()
       require'lsp-lens'.setup({
-        enable = true,
+        enable = false,
         ignore_filetype = {
           "prisma",
           "help",
