@@ -458,7 +458,21 @@ local plugins = {
   -- 增强文件类型
   ["nathom/filetype.nvim"] = {
     config = function ()
-      require("filetype").setup()
+      require("filetype").setup({})
+    end
+  },
+  ["VidocqH/lsp-lens.nvim"] = {
+    config = function ()
+      require'lsp-lens'.setup({
+        enable = true,
+        ignore_filetype = {
+          "prisma",
+          "help",
+          "qf",
+          "markdown",
+          "gitcommit",
+        },
+      })
     end
   }
 }
