@@ -169,7 +169,8 @@ M.diy = {
         require("custom.plugins.applist")({})
       end,
       "show applist(macos)"
-    }
+    },
+    [";"] = { ":", "enter command mode", opts = { nowait = true } },
   },
   x = {
     ["<"] = {
