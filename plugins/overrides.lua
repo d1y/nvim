@@ -189,7 +189,7 @@ M.ui = {
 M.devicons = {
   override ={
     default_icon = {
-      icon = '🤔',
+      icon = '🌃',
       name = 'Default',
     },
     c = {
