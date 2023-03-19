@@ -455,6 +455,12 @@ local plugins = {
       })
 		end,
 	},
+  -- 增强文件类型
+  ["nathom/filetype.nvim"] = {
+    config = function ()
+      require("filetype").setup()
+    end
+  }
 }
 
 return plugins
