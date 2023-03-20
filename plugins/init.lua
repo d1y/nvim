@@ -340,8 +340,18 @@ local plugins = {
       }
      end
   },
+  -- c语言注释文件
+  ["paopaol/cmp-doxygen"] = {
+    after = "nvim-cmp",
+    requires = {
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-treesitter/nvim-treesitter-textobjects"
+    },
+    config = function ()
+      print("are you ok?")
+    end
+  },
   ["ray-x/cmp-treesitter"] = { after = "nvim-cmp" },
-  ["KadoBot/cmp-plugins"] = { after = "nvim-cmp" },
   -- markdown 预览
   ['toppair/peek.nvim'] = {
     run = 'deno task --quiet build:fast',
@@ -450,7 +460,7 @@ local plugins = {
         },
       })
     end
-  }
+  },
 }
 
 return plugins

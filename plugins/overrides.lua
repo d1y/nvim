@@ -167,7 +167,7 @@ M.cmp = {
     { name = "path", priority = 4 },
     -- { name = "cmp_tabnine"},
     { name = "treesitter"},
-    { name = "plugins"},
+    { name = "doxygen" }
   },
 }
 
