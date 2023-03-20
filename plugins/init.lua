@@ -11,6 +11,9 @@ local plugins = {
   ["nvim-tree/nvim-tree.lua"] = {
     disable = true,
   },
+  ["NvChad/nvterm"] = {
+    override_options = overrides.term,
+  },
   ["folke/which-key.nvim"] = {
     disable = false,
   },

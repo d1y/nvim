@@ -186,6 +186,23 @@ M.ui = {
   },
 }
 
+M.term = {
+  terminals = {
+    type_opts = {
+      float = {
+        relative = "editor",
+        row = 0.3,
+        col = 0.25,
+        width = 0.6,
+        height = 0.4,
+        border = "single",
+      },
+      horizontal = { location = "rightbelow", split_ratio = 0.3 },
+      vertical = { location = "rightbelow", split_ratio = 0.5 },
+    },
+  },
+}
+
 M.devicons = {
   override ={
     default_icon = {
