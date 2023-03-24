@@ -171,6 +171,18 @@ M.diy = {
       "show applist(macos)"
     },
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
+    ["<leader>gd"] = {
+      '<Cmd>DiffviewOpen<CR>',
+      "diffview: open",
+    },
+    ["<leader>gh"] = {
+      '<Cmd>DiffviewFileHistory<CR>',
+      "diffview: file-history",
+    },
+    ["<leader>gc"] = {
+      '<Cmd>DiffviewClose<CR>',
+      "diffview: close",
+    },
   },
   x = {
     ["<"] = {
