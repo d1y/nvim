@@ -9,7 +9,7 @@ if vim.fn.has('mac') == 1 then
 end
 
 M.ui = {
-  theme = "radium",
+  theme = "catppuccin",
   transparency = transparency,
 }
 
