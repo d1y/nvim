@@ -347,9 +347,6 @@ local plugins = {
       "nvim-treesitter/nvim-treesitter",
       "nvim-treesitter/nvim-treesitter-textobjects"
     },
-    config = function ()
-      print("are you ok?")
-    end
   },
   ["ray-x/cmp-treesitter"] = { after = "nvim-cmp" },
   -- markdown 预览
@@ -461,6 +458,7 @@ local plugins = {
       })
     end
   },
+  ["tpope/vim-repeat"] = { }
 }
 
 return plugins
