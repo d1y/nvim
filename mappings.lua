@@ -183,6 +183,18 @@ M.diy = {
       '<Cmd>DiffviewClose<CR>',
       "diffview: close",
     },
+    ["<M-1>"] = {
+      function ()
+        vim.diagnostic.goto_prev({})
+      end,
+      "goto prev(diagnostic)",
+    },
+    ["<M-2>"] = {
+      function ()
+        vim.diagnostic.goto_next({})
+      end,
+      "goto next(diagnostic)",
+    },
   },
   x = {
     ["<"] = {
