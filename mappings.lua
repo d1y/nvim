@@ -109,10 +109,10 @@ M.diy = {
       "packer.vim sync packages",
     },
     -- lsp code action menu
-    ["<leader>lc"] = {
-      "<cmd> CodeActionMenu <CR>",
-      "show code action menu(lsp extends)",
-    },
+    -- ["<leader>lc"] = {
+    --   "<cmd> CodeActionMenu <CR>",
+    --   "show code action menu(lsp extends)",
+    -- },
     ["<leader>wa"] = {
       "<cmd> TZAtaraxis <CR>",
       "truzen ataraxis",
