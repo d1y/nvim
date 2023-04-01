@@ -151,7 +151,9 @@ wk.register({
   ['<leader>G']         = { '<CMD>:BufferLineCyclePrev<CR>', "bufferline prev" },
   ['<leader>H']         = { '<CMD>:BufferLineCycleNext<CR>', "bufferline next" },
   ["<leader>/"] = {
-    "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>",
+     function()
+      require("Comment.api").toggle.linewise.current()
+    end,
     "toggle comment",
   },
   [";"] = { ':' },
@@ -232,6 +234,10 @@ wk.register({
 
 -- visual mode
 wk.register({
+  ["<leader>/"] = {
+    "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>",
+    "toggle comment",
+  },
   ['<M-j>'] = { ":m'>+<cr>`<my`>mzgv`yo`z", 'move line down' },
   ['<M-k>'] = { ":m'<-2<cr>`>my`<mzgv`yo`z", 'move line up' },
   ['.'] = { ':norm .<cr>', 'repat last normal mode command' },
