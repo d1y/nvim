@@ -3,7 +3,7 @@ return {
     run = ':TSUpdate',
     config = function()
       require 'nvim-treesitter.configs'.setup {
-        ensure_installed = { 'r', 'python', 'markdown', 'markdown_inline', 'julia', 'yaml', 'lua', 'vim', 'query', 'help','latex', 'vue' },
+        ensure_installed = { 'r', 'python', 'markdown', 'markdown_inline', 'julia', 'yaml', 'lua', 'vim', 'query', 'latex', 'vue' },
         highlight = {
           enable = true,
           additional_vim_regex_highlighting = { 'markdown' },

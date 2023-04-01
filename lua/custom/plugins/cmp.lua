@@ -12,7 +12,6 @@ return {
       { 'f3fora/cmp-spell' },
       { 'ray-x/cmp-treesitter' },
       { 'kdheepak/cmp-latex-symbols' },
-      -- { 'jc-doyle/cmp-pandoc-references' },
       { 'jmbuhr/cmp-pandoc-references' },
       { 'L3MON4D3/LuaSnip' },
       { 'rafamadriz/friendly-snippets' },
@@ -30,7 +29,6 @@ return {
       local luasnip = require 'luasnip'
       local lspkind = require "lspkind"
       lspkind.init()
-
 
       local has_words_before = function()
         local line, col = unpack(vim.api.nvim_win_get_cursor(0))

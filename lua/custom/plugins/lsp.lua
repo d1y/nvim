@@ -46,24 +46,6 @@ return {
       end
 
 
-      local on_attach2 = function(client, bufnr)
-        local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-
-        local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
-
-        buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
-        local opts = { noremap = true, silent = true }
-
-        buf_set_keymap('n', 'gD', '<cmd>Telescope lsp_type_definitions<CR>', opts)
-        buf_set_keymap('n', 'gh', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-        buf_set_keymap('n', 'gi', '<cmd>Telescope lsp_implementations<CR>', opts)
-        buf_set_keymap('n', 'gr', '<cmd>Telescope lsp_references<CR>', opts)
-        buf_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
-        buf_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
-        buf_set_keymap('n', '<leader>ll', '<cmd>lua vim.lsp.codelens.run()<cr>', opts)
-        client.server_capabilities.document_formatting = true
-      end
-
       local lsp_flags = {
         allow_incremental_sync = true,
         debounce_text_changes = 150,
@@ -80,23 +62,11 @@ return {
       capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
       capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-      -- also needs:
-      -- $home/.config/marksman/config.toml :
-      -- [core]
-      -- markdown.file_extensions = ["md", "markdown", "qmd"]
-      lspconfig.marksman.setup {
-        on_attach = on_attach2,
-        capabilities = capabilities,
-        filetypes = { 'markdown', 'quarto' },
-        root_dir = util.root_pattern(".git", ".marksman.toml", "_quarto.yml"),
-      }
-
       lspconfig.emmet_ls.setup {
         on_attach = on_attach,
         capabilities = capabilities,
         flags = lsp_flags
       }
-
       lspconfig.cssls.setup {
         on_attach = on_attach,
         capabilities = capabilities,
@@ -127,7 +97,6 @@ return {
         capabilities = capabilities,
         flags = lsp_flags
       }
-
       lspconfig.lua_ls.setup {
         on_attach = on_attach,
         capabilities = capabilities,
@@ -147,7 +116,6 @@ return {
           },
         },
       }
-
       lspconfig.pyright.setup {
         on_attach = on_attach,
         capabilities = capabilities,
@@ -157,13 +125,13 @@ return {
               util.path.dirname(fname)
         end
       }
-
       lspconfig.bashls.setup {
         on_attach = on_attach,
         capabilities = capabilities,
         flags = lsp_flags,
         filetypes = {'sh', 'bash'}
       }
+
     end
   }
 }
