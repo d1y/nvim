@@ -29,12 +29,6 @@ local function button(sc, txt, keybind)
 end
 
 return {
-  {
-    'goolord/alpha-nvim',
-    config = function()
-      require'alpha'.setup(require'alpha.themes.dashboard'.config)
-    end
-  },
   -- color html colors
   { 'norcalli/nvim-colorizer.lua', config = function()
     require 'colorizer'.setup {

@@ -102,14 +102,27 @@ return {
         capabilities = capabilities,
         flags = lsp_flags
       }
-      
       lspconfig.volar.setup {
         on_attach = on_attach,
         capabilities = capabilities,
         flags = lsp_flags
       }
-      
       lspconfig.tsserver.setup {
+        on_attach = on_attach,
+        capabilities = capabilities,
+        flags = lsp_flags
+      }
+      lspconfig.tailwindcss.setup {
+        on_attach = on_attach,
+        capabilities = capabilities,
+        flags = lsp_flags
+      }
+      lspconfig.html.setup {
+        on_attach = on_attach,
+        capabilities = capabilities,
+        flags = lsp_flags
+      }
+      lspconfig.gopls.setup {
         on_attach = on_attach,
         capabilities = capabilities,
         flags = lsp_flags

@@ -6,7 +6,14 @@ return {
   version = "*",
   dependencies = {
     "nvim-lua/plenary.nvim",
-    "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+    {"nvim-tree/nvim-web-devicons",
+      dependencies = { "DaikyXendo/nvim-material-icon" },
+      config = function()
+        require("nvim-web-devicons").setup {
+          override = require("nvim-material-icon").get_icons(),
+        }
+      end,
+    },
     "MunifTanjim/nui.nvim",
   },
   config = function ()

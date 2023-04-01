@@ -133,6 +133,7 @@ require('lazy').setup({
     -- See `:help indent_blankline.txt`
     opts = {
       char = '┊',
+      filetype_exclude = { "help", "alpha", "dashboard", "NvimTree", "Trouble", "lazy" },
       show_trailing_blankline_indent = false,
     },
   },
