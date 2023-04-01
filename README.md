@@ -2,12 +2,16 @@
 
 > config base https://github.com/NvChad/NvChad
 
+> work commit: https://github.com/NvChad/NvChad/tree/b913bdacfdcdb05a19326019d14d9b240ac689e1
+
 iTerm2 + Tmux + Nvim
 
 # install
 
 ```bash
 git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
+cd ~/.config/nvim
+git checkout b913bdacfdcdb05a19326019d14d9b240ac689e1
 git clone https://github.com/d1y/nvim ~/.config/nvim/lua/custom
 ```
 before use `PackerSync`
