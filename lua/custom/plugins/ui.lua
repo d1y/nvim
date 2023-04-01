@@ -29,6 +29,7 @@ end
 return {
   {
     'goolord/alpha-nvim',
+    enabled = false,
     config = function()
       require'alpha'.setup({
         header = {
