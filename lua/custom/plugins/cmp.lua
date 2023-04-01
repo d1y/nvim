@@ -119,11 +119,11 @@ return {
         view = {
           entries = "native",
         },
-        -- window = {
-        --   documentation = {
-        --     border = require 'misc.style'.border,
-        --   },
-        -- },
+        window = {
+          documentation = {
+            border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+          },
+        },
       })
       -- for friendly snippets
       require("luasnip.loaders.from_vscode").lazy_load()

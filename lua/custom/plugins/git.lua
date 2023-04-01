@@ -1,3 +1,5 @@
+vim.cmd([[ let g:gitblame_enabled = 0 ]])
+
 return {
   { 'sindrets/diffview.nvim' },
   { 'TimUntersberger/neogit',
@@ -19,5 +21,8 @@ return {
     }
   end
   },
-  { 'f-person/git-blame.nvim' },
+  -- { 'f-person/git-blame.nvim', config = function ()
+  --   require('git-blame').setup {
+  --   }
+  -- end },
 }

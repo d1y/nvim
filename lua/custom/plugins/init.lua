@@ -125,4 +125,21 @@ return {
     require("trouble").setup {}
   end
   },
+  {
+    "akinsho/bufferline.nvim", config = function ()
+      require("bufferline").setup{
+        options = {
+          diagnostics = "nvim_lsp",
+          offsets = {{
+            filetype = 'neo-tree',
+            text = "=͟͟͞͞=͟͟͞͞(●⁰ꈊ⁰● |||)",
+            text_align = "center",
+            highlight = "PanelHeading",
+            padding = 1,
+            separator = true,
+          }}
+        }
+      }
+    end
+  }
 }
