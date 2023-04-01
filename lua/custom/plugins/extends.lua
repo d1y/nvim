@@ -55,5 +55,8 @@ return {
         mapping = {"jj"},
       }
     end
-  }
+  },
+  {
+    'ethanholz/nvim-lastplace'
+  },
 }
