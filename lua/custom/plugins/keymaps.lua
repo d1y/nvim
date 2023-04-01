@@ -157,10 +157,6 @@ wk.register({
     "toggle comment",
   },
   [";"] = { ':' },
-  -- ['<c-t>'] = {
-  --   '<CMD> ToggleTerm <CR>',
-  --   'show term'
-  -- },
   ["\\"] = {
     "<cmd> BufferLinePick <CR>",
     "pick buffer line",
@@ -214,17 +210,51 @@ wk.register({
     vim.diagnostic.goto_next,
     "goto next(diagnostic)",
   },
-  ['[c'] = {
-    '<CMD> Gitsigns prev_hunk <CR>',
-    'goto prev hunk(git)'
+  ["]c"] = {
+    function()
+      if vim.wo.diff then
+        return "]c"
+      end
+      vim.schedule(function()
+        require("gitsigns").next_hunk()
+      end)
+      return "<Ignore>"
+    end,
+    "Jump to next hunk",
+    opts = { expr = true },
   },
-  [']c'] = {
-    '<CMD> Gitsigns next_hunk <CR>',
-    'goto next hunk(git)'
+
+  ["[c"] = {
+    function()
+      if vim.wo.diff then
+        return "[c"
+      end
+      vim.schedule(function()
+        require("gitsigns").prev_hunk()
+      end)
+      return "<Ignore>"
+    end,
+    "Jump to prev hunk",
+    opts = { expr = true },
   },
   ['<leader>rh'] = {
-    '<CMD> Gitsigns reset_hunk <CR>',
+    function()
+      require("gitsigns").reset_hunk()
+    end,
     'reset current hunk(git)'
+  },
+  ["<leader>ph"] = {
+    function()
+      require("gitsigns").preview_hunk()
+    end,
+    "Preview hunk(git)",
+  },
+
+  ["<leader>gb"] = {
+    function()
+      package.loaded.gitsigns.blame_line()
+    end,
+    "Blame line(git)",
   },
   ['8'] = {
     '<CMD>qa!<CR>',
