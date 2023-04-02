@@ -37,6 +37,10 @@ lvim.builtin.which_key.mappings["c"] = nil
 lvim.builtin.which_key.mappings["e"] = nil
 
 lvim.keys.normal_mode["<leader>n"] = ":NvimTreeToggle<CR>"
+lvim.keys.normal_mode["]c"] = ":Gitsigns prev_hunk<CR>"
+lvim.keys.normal_mode["[c"] = ":Gitsigns next_hunk<CR>"
+lvim.keys.normal_mode["[d"] = ":lua vim.diagnostic.goto_prev()<CR>"
+lvim.keys.normal_mode["]d"] = ":lua vim.diagnostic.goto_next()<CR>"
 
 lvim.keys.normal_mode["8"] = ":qa!<CR>"
 -- -- Use which-key to add extra bindings with the leader-key prefix
