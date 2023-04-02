@@ -37,7 +37,7 @@ lvim.builtin.which_key.mappings["e"] = nil
 lvim.builtin.which_key.mappings["s"] = nil
 lvim.keys.normal_mode["<leader>s"] = ":w<cr>"
 
-lvim.keys.normal_mode["<leader>n"] = ":NvimTreeToggle<CR>"
+lvim.keys.normal_mode["<leader>n"] = ":NeoTreeShowToggle<CR>"
 lvim.keys.normal_mode["]c"] = ":Gitsigns prev_hunk<CR>"
 lvim.keys.normal_mode["[c"] = ":Gitsigns next_hunk<CR>"
 lvim.keys.normal_mode["[d"] = ":lua vim.diagnostic.goto_prev()<CR>"
@@ -60,6 +60,7 @@ lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
+lvim.builtin.nvimtree.active = false -- NOTE: using neo-tree
 
 -- Automatically install missing parsers when entering buffer
 lvim.builtin.treesitter.auto_install = true
@@ -188,6 +189,57 @@ lvim.plugins = {
     end
   },
   { "gcmt/wildfire.vim" },
+  {
+    "phaazon/hop.nvim",
+    config = function ()
+      local hop = require('hop')
+      hop.setup ({
+        keys = 'etovxqpdygfblzhckisuran'
+      })
+      local directions = require('hop.hint').HintDirection
+      vim.keymap.set('', 'f', function()
+        hop.hint_char1({ direction = directions.AFTER_CURSOR, current_line_only = false })
+      end, {remap=true})
+      vim.keymap.set('', 'F', function()
+        hop.hint_char1({ direction = directions.BEFORE_CURSOR, current_line_only = false })
+      end, {remap=true})
+    end
+    ,
+  },
+  {
+  "nvim-neo-tree/neo-tree.nvim",
+  branch = "v2.x",
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+    "nvim-tree/nvim-web-devicons",
+    "MunifTanjim/nui.nvim",
+  },
+  config = function()
+    require("neo-tree").setup({
+      close_if_last_window = true,
+      window = {
+        width = 30,
+      },
+      buffers = {
+        follow_current_file = true,
+      },
+      filesystem = {
+        follow_current_file = true,
+        filtered_items = {
+          hide_dotfiles = false,
+          hide_gitignored = false,
+          hide_by_name = {
+            "node_modules"
+          },
+          never_show = {
+            ".DS_Store",
+            "thumbs.db"
+          },
+        },
+      },
+    })
+  end
+},
 }
 
 -- -- Autocommands (`:help autocmd`) <https://neovim.io/doc/user/autocmd.html>
