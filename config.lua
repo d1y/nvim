@@ -70,6 +70,8 @@ lvim.builtin.treesitter.auto_install = true
 -- -- always installed on startup, useful for parsers without a strict filetype
 lvim.builtin.treesitter.ensure_installed = { "comment", "markdown_inline", "regex", "vue", "typescript" }
 
+lvim.builtin.treesitter.rainbow.enable = true
+
 -- -- generic LSP settings <https://www.lunarvim.org/docs/languages#lsp-support>
 
 -- --- disable automatic installation of servers
@@ -239,7 +241,62 @@ lvim.plugins = {
       },
     })
   end
-},
+  },
+  {
+    "windwp/nvim-ts-autotag",
+    config = function()
+      require("nvim-ts-autotag").setup()
+    end,
+  },
+  {
+    "mrjones2014/nvim-ts-rainbow",
+  },
+  {
+    "ray-x/lsp_signature.nvim",
+    event = "BufRead",
+    config = function() require"lsp_signature".on_attach() end,
+  },
+  {
+    "shellRaining/hlchunk.nvim", config = function ()
+      require('hlchunk').setup({
+        indent = {
+          enable = false,
+        },
+        blank = {
+          enable = false,
+        }
+      })
+    end,
+  },
+  {
+    "rareitems/printer.nvim", config = function ()
+      local function webPrint(_, b)
+        return string.format('console.log({%s})', b)
+      end
+      require('printer').setup({
+        keymap = "gp",
+        add_to_inside = function(_)
+          return ""
+        end,
+        formatters = {
+          typescript = webPrint,
+          javascript = webPrint,
+          vue = webPrint,
+          html = webPrint,
+        },
+      })
+    end,
+  },
+  {
+    "Exafunction/codeium.vim", config = function ()
+      -- https://github.com/Exafunction/codeium.vim
+      vim.g.codeium_disable_bindings = 1
+      vim.keymap.set('i', '<M-Bslash>', function () return vim.fn['codeium#Accept']() end, { expr = true })
+      vim.keymap.set('i', '<M-n>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true })
+      vim.keymap.set('i', '<M-p>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true })
+      vim.keymap.set('n', '<M-c>', function() return vim.fn['codeium#Clear']() end, { expr = true })
+    end,
+  }
 }
 
 -- -- Autocommands (`:help autocmd`) <https://neovim.io/doc/user/autocmd.html>
