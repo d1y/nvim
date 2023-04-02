@@ -257,7 +257,9 @@ lvim.plugins = {
     config = function() require"lsp_signature".on_attach() end,
   },
   {
-    "shellRaining/hlchunk.nvim", config = function ()
+    "shellRaining/hlchunk.nvim",
+    enable = false,
+    config = function ()
       require('hlchunk').setup({
         indent = {
           enable = false,
