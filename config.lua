@@ -64,7 +64,7 @@ lvim.builtin.nvimtree.active = false -- NOTE: using neo-tree
 -- Automatically install missing parsers when entering buffer
 lvim.builtin.treesitter.auto_install = true
 
--- lvim.builtin.treesitter.ignore_install = { "haskell" }
+lvim.builtin.treesitter.ignore_install = { "haskell", "help" }
 
 -- -- always installed on startup, useful for parsers without a strict filetype
 lvim.builtin.treesitter.ensure_installed = { "comment", "markdown_inline", "regex", "vue", "typescript" }
@@ -74,7 +74,7 @@ lvim.builtin.treesitter.rainbow.enable = true
 -- -- generic LSP settings <https://www.lunarvim.org/docs/languages#lsp-support>
 
 -- --- disable automatic installation of servers
-lvim.lsp.installer.setup.automatic_installation = true
+lvim.lsp.installer.setup.automatic_installation = false
 
 -- ---configure a server manually. IMPORTANT: Requires `:LvimCacheReset` to take effect
 -- ---see the full default list `:lua =lvim.lsp.automatic_configuration.skipped_servers`
