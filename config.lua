@@ -307,6 +307,9 @@ lvim.plugins = {
       require("todo-comments").setup()
     end,
   },
+  {
+    "kdheepak/lazygit.nvim"
+  },
 }
 
 -- -- Autocommands (`:help autocmd`) <https://neovim.io/doc/user/autocmd.html>
