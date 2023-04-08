@@ -2,7 +2,6 @@
  THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
  `lvim` is the global options object
 ]]
-
 -- vim options
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
@@ -123,40 +122,40 @@ require("lvim.lsp.manager").setup("tsserver", {})
 
 -- -- Additional Plugins <https://www.lunarvim.org/docs/plugins#user-plugins>
 lvim.plugins = {
-  {"lunarvim/colorschemes"},
-  {"catppuccin/nvim"},
+  { "lunarvim/colorschemes" },
+  { "catppuccin/nvim" },
   {
-  "folke/lsp-colors.nvim",
-  event = "BufRead",
+    "folke/lsp-colors.nvim",
+    event = "BufRead",
   },
-  {"folke/tokyonight.nvim"},
+  { "folke/tokyonight.nvim" },
   {
     "folke/trouble.nvim",
     cmd = "TroubleToggle",
   },
   {
-  "norcalli/nvim-colorizer.lua",
+    "norcalli/nvim-colorizer.lua",
     config = function()
       require("colorizer").setup({ "css", "scss", "html", "javascript", "vue" }, {
-        RGB = true, -- #RGB hex codes
-        RRGGBB = true, -- #RRGGBB hex codes
+        RGB = true,      -- #RGB hex codes
+        RRGGBB = true,   -- #RRGGBB hex codes
         RRGGBBAA = true, -- #RRGGBBAA hex codes
-        rgb_fn = true, -- CSS rgb() and rgba() functions
-        hsl_fn = true, -- CSS hsl() and hsla() functions
-        css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
-        css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
+        rgb_fn = true,   -- CSS rgb() and rgba() functions
+        hsl_fn = true,   -- CSS hsl() and hsla() functions
+        css = true,      -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
+        css_fn = true,   -- Enable all CSS *functions*: rgb_fn, hsl_fn
       })
     end,
   },
   {
     "tpope/vim-surround",
     init = function()
-       vim.o.timeoutlen = 500
+      vim.o.timeoutlen = 500
     end
   },
   {
     "nvim-zh/colorful-winsep.nvim",
-    config = function ()
+    config = function()
       require('colorful-winsep').setup()
     end
   },
@@ -165,17 +164,17 @@ lvim.plugins = {
     event = "InsertEnter",
     config = function()
       require("better_escape").setup {
-        mapping = {"jj"},
+        mapping = { "jj" },
       }
     end
   },
   {
     'ethanholz/nvim-lastplace'
   },
-  { "nacro90/numb.nvim", event = "BufReadPre", config = true },
+  { "nacro90/numb.nvim",    event = "BufReadPre", config = true },
   {
     "yamatsum/nvim-cursorline",
-    config = function ()
+    config = function()
       require('nvim-cursorline').setup {
         cursorline = {
           enable = true,
@@ -193,54 +192,54 @@ lvim.plugins = {
   { "gcmt/wildfire.vim" },
   {
     "phaazon/hop.nvim",
-    config = function ()
+    config = function()
       local hop = require('hop')
-      hop.setup ({
+      hop.setup({
         keys = 'etovxqpdygfblzhckisuran'
       })
       local directions = require('hop.hint').HintDirection
       vim.keymap.set('', 'f', function()
         hop.hint_char1({ direction = directions.AFTER_CURSOR, current_line_only = false })
-      end, {remap=true})
+      end, { remap = true })
       vim.keymap.set('', 'F', function()
         hop.hint_char1({ direction = directions.BEFORE_CURSOR, current_line_only = false })
-      end, {remap=true})
+      end, { remap = true })
     end
     ,
   },
   {
-  "nvim-neo-tree/neo-tree.nvim",
-  branch = "v2.x",
-  dependencies = {
-    "nvim-lua/plenary.nvim",
-    "nvim-tree/nvim-web-devicons",
-    "MunifTanjim/nui.nvim",
-  },
-  config = function()
-    require("neo-tree").setup({
-      close_if_last_window = true,
-      window = {
-        width = 30,
-      },
-      buffers = {
-        follow_current_file = true,
-      },
-      filesystem = {
-        follow_current_file = true,
-        filtered_items = {
-          hide_dotfiles = false,
-          hide_gitignored = false,
-          hide_by_name = {
-            "node_modules"
-          },
-          never_show = {
-            ".DS_Store",
-            "thumbs.db"
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v2.x",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons",
+      "MunifTanjim/nui.nvim",
+    },
+    config = function()
+      require("neo-tree").setup({
+        close_if_last_window = true,
+        window = {
+          width = 30,
+        },
+        buffers = {
+          follow_current_file = true,
+        },
+        filesystem = {
+          follow_current_file = true,
+          filtered_items = {
+            hide_dotfiles = false,
+            hide_gitignored = false,
+            hide_by_name = {
+              "node_modules"
+            },
+            never_show = {
+              ".DS_Store",
+              "thumbs.db"
+            },
           },
         },
-      },
-    })
-  end
+      })
+    end
   },
   {
     "windwp/nvim-ts-autotag",
@@ -254,12 +253,12 @@ lvim.plugins = {
   {
     "ray-x/lsp_signature.nvim",
     event = "BufRead",
-    config = function() require"lsp_signature".on_attach() end,
+    config = function() require "lsp_signature".on_attach() end,
   },
   {
     "shellRaining/hlchunk.nvim",
     enable = false,
-    config = function ()
+    config = function()
       require('hlchunk').setup({
         indent = {
           enable = false,
@@ -271,7 +270,8 @@ lvim.plugins = {
     end,
   },
   {
-    "rareitems/printer.nvim", config = function ()
+    "rareitems/printer.nvim",
+    config = function()
       local function webPrint(_, b)
         return string.format('console.log({%s})', b)
       end
@@ -290,15 +290,23 @@ lvim.plugins = {
     end,
   },
   {
-    "Exafunction/codeium.vim", config = function ()
+    "Exafunction/codeium.vim",
+    config = function()
       -- https://github.com/Exafunction/codeium.vim
       vim.g.codeium_disable_bindings = 1
-      vim.keymap.set('i', '<M-Bslash>', function () return vim.fn['codeium#Accept']() end, { expr = true })
+      vim.keymap.set('i', '<M-Bslash>', function() return vim.fn['codeium#Accept']() end, { expr = true })
       vim.keymap.set('i', '<M-n>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true })
       vim.keymap.set('i', '<M-p>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true })
       vim.keymap.set('n', '<M-c>', function() return vim.fn['codeium#Clear']() end, { expr = true })
     end,
-  }
+  },
+  {
+    "folke/todo-comments.nvim",
+    event = "BufRead",
+    config = function()
+      require("todo-comments").setup()
+    end,
+  },
 }
 
 -- -- Autocommands (`:help autocmd`) <https://neovim.io/doc/user/autocmd.html>
