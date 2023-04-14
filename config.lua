@@ -318,6 +318,17 @@ lvim.plugins = {
   {
     'nyoom-engineering/oxocarbon.nvim'
   },
+  {
+    'akinsho/flutter-tools.nvim',
+    lazy = false,
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'stevearc/dressing.nvim', -- optional for vim.ui.select
+    },
+    config = function()
+      require("flutter-tools").setup {}
+    end
+  }
 }
 
 -- -- Autocommands (`:help autocmd`) <https://neovim.io/doc/user/autocmd.html>
