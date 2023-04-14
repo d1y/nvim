@@ -37,8 +37,8 @@ lvim.builtin.which_key.mappings["s"] = nil
 lvim.keys.normal_mode["<leader>s"] = ":w<cr>"
 
 lvim.keys.normal_mode["<leader>n"] = ":NeoTreeShowToggle<CR>"
-lvim.keys.normal_mode["]c"] = ":Gitsigns prev_hunk<CR>"
-lvim.keys.normal_mode["[c"] = ":Gitsigns next_hunk<CR>"
+lvim.keys.normal_mode["[c"] = ":Gitsigns prev_hunk<CR>"
+lvim.keys.normal_mode["]c"] = ":Gitsigns next_hunk<CR>"
 lvim.keys.normal_mode["[d"] = ":lua vim.diagnostic.goto_prev()<CR>"
 lvim.keys.normal_mode["]d"] = ":lua vim.diagnostic.goto_next()<CR>"
 
@@ -52,7 +52,7 @@ lvim.keys.normal_mode["8"] = ":qa!<CR>"
 lvim.lsp.buffer_mappings.normal_mode['gh'] = lvim.lsp.buffer_mappings.normal_mode['K']
 
 -- -- Change theme settings
-lvim.colorscheme = "catppuccin"
+lvim.colorscheme = "oxocarbon"
 
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
@@ -84,6 +84,7 @@ require("lvim.lsp.manager").setup("pyright", opts)
 require("lvim.lsp.manager").setup("volar", {})
 require("lvim.lsp.manager").setup("tailwindcss", {})
 require("lvim.lsp.manager").setup("tsserver", {})
+require("lvim.lsp.manager").setup("emmet_ls", {})
 
 -- ---remove a server from the skipped list, e.g. eslint, or emmet_ls. IMPORTANT: Requires `:LvimCacheReset` to take effect
 -- ---`:LvimInfo` lists which server(s) are skipped for the current filetype
@@ -309,6 +310,13 @@ lvim.plugins = {
   },
   {
     "kdheepak/lazygit.nvim"
+  },
+  {
+    "liuchengxu/space-vim-dark"
+  },
+  { "bluz71/vim-moonfly-colors", name = "moonfly", lazy = false, priority = 1000 },
+  {
+    'nyoom-engineering/oxocarbon.nvim'
   },
 }
 
